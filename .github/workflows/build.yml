@@ -49,11 +49,11 @@ jobs:
         run: |
           ARTIFACT_NAME="${{ matrix.artifact_name }}-${VERSION}"
           if [[ "$RUNNER_OS" == "macOS" ]]; then
-            pyinstaller --onefile setup.py --name=${ARTIFACT_NAME}
+            pyinstaller --onefile --windowed --icon=tvhplayer.png setup.py --name=${ARTIFACT_NAME}
           elif [[ "$RUNNER_OS" == "Linux" ]]; then
-            pyinstaller --onefile setup.py --name=${ARTIFACT_NAME}
+            pyinstaller --onefile --windowed --icon=tvhplayer.png setup.py --name=${ARTIFACT_NAME}
           else
-            pyinstaller --onefile setup.py --name=${ARTIFACT_NAME}.exe
+            pyinstaller --onefile --windowed --icon=tvhplayer.png setup.py --name=${ARTIFACT_NAME}.exe
           fi
         shell: bash
 
